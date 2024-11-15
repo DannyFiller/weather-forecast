@@ -6,13 +6,11 @@ import 'package:intl/intl.dart';
 Widget current_forecast(BuildContext context, Weather_Today weather) {
   return LayoutBuilder(
     builder: (context, constraints) {
-      // Lấy kích thước của màn hình
       double width = constraints.maxWidth;
       double height = width * 0.3;
 
-      // Điều chỉnh kích thước văn bản và hình ảnh theo kích thước màn hình
-      double fontSize = width < 600 ? 14 : 20; // Điều chỉnh kích thước chữ
-      double iconSize = width < 600 ? 40 : 50; // Điều chỉnh kích thước icon
+      double fontSize = width < 600 ? 14 : 20;
+      double iconSize = width < 600 ? 40 : 50;
 
       return Container(
         margin: const EdgeInsets.symmetric(vertical: 8),
