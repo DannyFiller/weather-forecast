@@ -24,17 +24,17 @@ Widget current_forecast(BuildContext context, Weather_Today weather) {
             Expanded(
               flex: 6,
               child: Padding(
-                padding: EdgeInsets.only(left: 20),
+                padding: const EdgeInsets.only(left: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       "${weather.location} (${DateFormat('yyyy-MM-dd').format(weather.localtime)})",
                       style: Text_Styles_App.h2.copyWith(fontSize: fontSize),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       "Temperature : ${weather.temperature}°C",
                       style: Text_Styles_App.body.copyWith(fontSize: fontSize),
@@ -63,7 +63,7 @@ Widget current_forecast(BuildContext context, Weather_Today weather) {
                       width: iconSize,
                       height: iconSize,
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Text(
                       "${weather.conditionText}",
                       style: Text_Styles_App.body.copyWith(fontSize: fontSize),

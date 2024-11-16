@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weather_forecast/pages/dashboard.dart';
+
+import 'package:provider/provider.dart';
+import 'package:weather_forecast/pages/main_page.dart';
+import 'package:weather_forecast/providers/weather_provider.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,10 +13,15 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: DashBoardPage(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => WeatherProvider()),
+      ],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: MainScreen(),
+        ),
       ),
     );
   }
