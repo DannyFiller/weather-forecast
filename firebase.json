@@ -1,1 +1,39 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"weather-forecast-14f2f","appId":"1:789873044174:android:f3e3ddbd34dfe4255a3e9f","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"weather-forecast-14f2f","configurations":{"android":"1:789873044174:android:f3e3ddbd34dfe4255a3e9f","ios":"1:789873044174:ios:46ffc2e2d26a51055a3e9f","macos":"1:789873044174:ios:46ffc2e2d26a51055a3e9f","web":"1:789873044174:web:7860fe836f89dfb65a3e9f","windows":"1:789873044174:web:7d6efcac40b6040f5a3e9f"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "weather-forecast-14f2f",
+          "appId": "1:789873044174:android:f3e3ddbd34dfe4255a3e9f",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "weather-forecast-14f2f",
+          "configurations": {
+            "android": "1:789873044174:android:f3e3ddbd34dfe4255a3e9f",
+            "ios": "1:789873044174:ios:46ffc2e2d26a51055a3e9f",
+            "macos": "1:789873044174:ios:46ffc2e2d26a51055a3e9f",
+            "web": "1:789873044174:web:7860fe836f89dfb65a3e9f",
+            "windows": "1:789873044174:web:7d6efcac40b6040f5a3e9f"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
