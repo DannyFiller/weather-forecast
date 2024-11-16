@@ -6,7 +6,7 @@ import 'package:weather_forecast/models/weather_forecast.dart';
 
 class WeatherService {
   final String apiKey = '1a46fe4a7b9a4c978c093230241411';
-  final String baseUrl = 'http://api.weatherapi.com/v1';
+  final String baseUrl = 'https://api.weatherapi.com/v1';
   int defalutNumber = 4;
 
   Future<Weather_Today?> fetchWeather(String location) async {
