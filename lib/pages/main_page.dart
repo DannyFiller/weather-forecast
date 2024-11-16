@@ -12,16 +12,16 @@ class MainScreen extends StatelessWidget {
     Size _size = MediaQuery.of(context).size;
     return Scaffold(
         appBar: AppBar(
-          title: NavberApp(),
+          title: const NavberApp(),
         ),
         body: Responsive(
-          mobile: Row(
+          mobile: const Row(
             children: [
               Expanded(flex: 1, child: LeftPanel()),
               Expanded(flex: 3, child: RightPanel()),
             ],
           ),
-          tablet: Row(
+          tablet: const Row(
             children: [
               Expanded(flex: 3, child: LeftPanel()),
               Expanded(flex: 7, child: RightPanel()),
@@ -29,8 +29,10 @@ class MainScreen extends StatelessWidget {
           ),
           destop: Row(
             children: [
-              Expanded(flex: _size.width > 1340 ? 3 : 4, child: LeftPanel()),
-              Expanded(flex: _size.width > 1340 ? 7 : 6, child: RightPanel()),
+              Expanded(
+                  flex: _size.width > 1340 ? 3 : 4, child: const LeftPanel()),
+              Expanded(
+                  flex: _size.width > 1340 ? 7 : 6, child: const RightPanel()),
             ],
           ),
         ));
