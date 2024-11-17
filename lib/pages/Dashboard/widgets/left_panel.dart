@@ -75,19 +75,6 @@ class _LeftPanelState extends State<LeftPanel> {
                   style: Text_Styles_App.body,
                 )),
           ),
-          const SizedBox(height: 8),
-          const Row(
-            children: [
-              Expanded(child: Divider()),
-              Expanded(
-                  child: Text(
-                "or",
-                textAlign: TextAlign.center,
-              )),
-              Expanded(child: Divider()),
-            ],
-          ),
-          current_location_button(context),
           Divider(),
           Text(
             "Subscribe To Receice Daily Mail",

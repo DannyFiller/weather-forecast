@@ -34,7 +34,8 @@ class Authservice {
   Future<void> sendSignInLink(String email) async {
     try {
       final ActionCodeSettings actionCodeSettings = ActionCodeSettings(
-        url: 'http://localhost:52804/', // URL khi người dùng nhấn vào liên kết
+        url:
+            'https://weather-forecast-14f2f.web.app/', // URL khi người dùng nhấn vào liên kết
         handleCodeInApp: true,
         androidPackageName: 'com.example.weather-forecast',
         androidInstallApp: false,
@@ -42,15 +43,14 @@ class Authservice {
         iOSBundleId: 'com.example.weather-forecast',
       );
 
-      // Gửi email chứa liên kết đăng nhập
       await FirebaseAuth.instance.sendSignInLinkToEmail(
         email: email,
         actionCodeSettings: actionCodeSettings,
       );
 
-      print('Email đăng nhập đã được gửi đến $email');
+      print('Mail sended $email');
     } catch (e) {
-      print('Lỗi khi gửi email: $e');
+      print('Eror: $e');
     }
   }
 }
