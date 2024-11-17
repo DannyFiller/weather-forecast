@@ -31,7 +31,26 @@ class Authservice {
     );
   }
 
-  Future<void> showIdUser() async {
-    print(FirebaseAuth.instance.currentUser!.uid.toString());
+  Future<void> sendSignInLink(String email) async {
+    try {
+      final ActionCodeSettings actionCodeSettings = ActionCodeSettings(
+        url: 'http://localhost:52804/', // URL khi người dùng nhấn vào liên kết
+        handleCodeInApp: true,
+        androidPackageName: 'com.example.weather-forecast',
+        androidInstallApp: false,
+        androidMinimumVersion: '21',
+        iOSBundleId: 'com.example.weather-forecast',
+      );
+
+      // Gửi email chứa liên kết đăng nhập
+      await FirebaseAuth.instance.sendSignInLinkToEmail(
+        email: email,
+        actionCodeSettings: actionCodeSettings,
+      );
+
+      print('Email đăng nhập đã được gửi đến $email');
+    } catch (e) {
+      print('Lỗi khi gửi email: $e');
+    }
   }
 }

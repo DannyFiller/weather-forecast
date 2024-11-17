@@ -7,11 +7,13 @@ class WeatherProvider with ChangeNotifier {
   final WeatherService _weatherService = WeatherService();
   Weather_Today? _weather;
   ForecastWeather? _forecast;
+  ForecastDay? _yesterdayForecast;
   bool _isLoading = false;
   String _location = '';
 
   Weather_Today? get weather => _weather;
   ForecastWeather? get forecast => _forecast;
+  ForecastDay? get yesterdayForcast => _yesterdayForecast;
   bool get isLoading => _isLoading;
   String get location => _location;
 
@@ -36,6 +38,14 @@ class WeatherProvider with ChangeNotifier {
     ForecastWeather? forecast =
         await _weatherService.fetchMoreWeatherForecast(location, 4);
     _forecast = forecast;
+    _isLoading = false;
+    notifyListeners();
+  }
+
+  getHistoryForcast(String location) async {
+    ForecastDay? yesterdayForecast =
+        await _weatherService.fetchHistoryWeather(location);
+    _yesterdayForecast = yesterdayForecast;
     _isLoading = false;
     notifyListeners();
   }

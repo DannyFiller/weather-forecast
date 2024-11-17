@@ -3,6 +3,7 @@ import 'package:weather_forecast/pages/Dashboard/widgets/button.dart';
 import 'package:weather_forecast/pages/Dashboard/widgets/current_forcast.dart';
 import 'package:weather_forecast/pages/Dashboard/widgets/weather_item.dart';
 import 'package:weather_forecast/providers/weather_provider.dart';
+import 'package:weather_forecast/services/weather_service.dart';
 import 'package:weather_forecast/utilities/text_style.dart';
 import 'package:provider/provider.dart';
 
@@ -63,8 +64,8 @@ class _RightPanelState extends State<RightPanel> {
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 4,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
+                        crossAxisSpacing: 8,
+                        mainAxisSpacing: 8,
                       ),
                       itemCount: forecast.forecastDays.length,
                       itemBuilder: (context, index) =>

@@ -25,4 +25,9 @@ class Text_Styles_App {
     fontSize: 16,
     color: Colors.white,
   );
+  static const TextStyle bodyBold = TextStyle(
+    fontSize: 16,
+    color: Colors.black,
+    fontWeight: FontWeight.bold,
+  );
 }

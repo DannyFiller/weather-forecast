@@ -69,4 +69,28 @@ class WeatherService {
       return null;
     }
   }
+
+  Future<ForecastDay?> fetchHistoryWeather(String location) async {
+    final yesterday = DateTime.now().subtract(Duration(days: 1));
+    final formattedDate =
+        "${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}";
+
+    final url =
+        "$baseUrl/history.json?key=$apiKey&q=$location&dt=$formattedDate";
+
+    try {
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        return ForecastDay.fromJson(data['forecast']['forecastday'][0]);
+      } else {
+        print('Error: ${response.statusCode}');
+        return null;
+      }
+    } catch (e) {
+      print('Error: $e');
+      return null;
+    }
+  }
 }
